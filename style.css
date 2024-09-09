@@ -157,9 +157,6 @@ nav {
 
 .hero-text .highlight {
     color: #FF6347;
-    position: relative;
-    display: inline-block;
-    left: 120px;
 }
 
 .hero-text .highlight::after {
