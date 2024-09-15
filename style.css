@@ -10,6 +10,7 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f8f9fa;
+    scroll-behavior: smooth;
 }
 
 /* Header and Navigation Styles */
@@ -166,7 +167,6 @@ nav {
     height: 10px;
     bottom: 5px;
     left: 0;
-    background-color: rgba(255, 99, 71, 0.2);
     z-index: -1;
 }
 
@@ -351,4 +351,117 @@ nav {
     border-radius: 50%;
     margin-left: 10px;
 
+}
+/* Add these new animation keyframes and styles */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromRight {
+    from { transform: translateX(50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromBottom {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Apply animations to specific elements */
+
+.logo-container {
+    animation: slideInFromLeft 0.5s ease-out;
+}
+
+.nav-links li {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.nav-links li:nth-child(1) { animation-delay: 0.1s; }
+.nav-links li:nth-child(2) { animation-delay: 0.2s; }
+.nav-links li:nth-child(3) { animation-delay: 0.3s; }
+.nav-links li:nth-child(4) { animation-delay: 0.4s; }
+.nav-links li:nth-child(5) { animation-delay: 0.5s; }
+.nav-links li:nth-child(6) { animation-delay: 0.6s; }
+
+.contact-btn {
+    animation: slideInFromRight 0.5s ease-out;
+}
+
+.hero-text {
+    animation: slideInFromLeft 0.8s ease-out;
+}
+
+.hero-text h1, .hero-text h2 {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.hero-text .highlight {
+    animation: fadeIn 0.8s ease-out infinite alternate;
+    animation-delay: 0.5s;
+}
+
+.sub-text {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 0.7s;
+}
+
+.cta-button {
+    opacity: 0;
+    animation: slideInFromBottom 0.8s ease-out forwards;
+    animation-delay: 1s;
+}
+
+.profile-image-container {
+    animation: scaleIn 1s ease-out;
+}
+
+.social-icons a {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.social-icons a:nth-child(1) { animation-delay: 1.2s; }
+.social-icons a:nth-child(2) { animation-delay: 1.3s; }
+.social-icons a:nth-child(3) { animation-delay: 1.4s; }
+.social-icons a:nth-child(4) { animation-delay: 1.5s; }
+.social-icons a:nth-child(5) { animation-delay: 1.6s; }
+
+/* Add animations to other sections */
+
+.about, .services, .skills, .projects, .contact, #gallery {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.about-info > div, .service-item, .skills-grid img, .project-item, .gallery-item {
+    opacity: 0;
+    animation: slideInFromBottom 0.8s ease-out forwards;
+}
+
+/* Trigger animations when elements come into view */
+.animate-on-scroll {
+    opacity: 0;
+    transition: opacity 0.8s, transform 0.8s;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
