@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expanded Menu Item with Hidden Text</title>
+    <link rel="stylesheet" href="../../../normalize.css">
+    <link rel="stylesheet" href="../lib/fontawesome-free-6.6.0-web/css/all.min.css">
+    <style>
+        body {
+            background-color: #ffffff;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            position: absolute;
+            top: 25vh;
+        }
+        .container {
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+            position: relative;
+            transition: width 0.3s ease;
+            background-color: #000000;
+            border-radius: 0 10px 10px 0;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .menu {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 200px;
+            display: flex;
+            align-items: center;
+            padding-left: 15px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .icon {
+            width: 45px;
+            height: 45px;
+            position: absolute;
+            right: 3px;
+            top: 3px;
+        }
+        .container:hover {
+            width: 300px;
+            transition: width 1s ease;
+        }
+        .container:hover .menu {
+            opacity: 1;
+            transition: opacity 1s ease;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="menu">Menu 01</div>
+    <i class="fa-solid fa-cart-shopping fa-bounce icon" style="color: #ff00dd;"></i>
+</div>
+<div class="container">
+    <div class="menu">Menu 02</div>
+    <i class="fa-solid fa-shield-halved fa-beat-fade icon" style="color: #ff0000;"></i>
+</div>
+<div class="container">
+    <div class="menu">Menu 03</div>
+    <i class="fa-solid fa-truck-fast fa-flip icon" style="color: #ffd500;"></i>
+</div>
+<div class="container">
+    <div class="menu">Menu 04</div>
+    <i class="fa-solid fa-house fa-bounce icon" style="color: #002afa;"></i>
+</div>
+<div class="container">
+    <div class="menu">Menu 05</div>
+    <i class="fa-solid fa-location-dot fa-bounce icon" style="color: #63E6BE;"></i>
+</div>
+
+<script src="../lib/fontawesome-free-6.6.0-web/js/all.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        #logoutButton{
+            position: absolute;
+            right: 100px;
+        }
+        #logoutButton:hover {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="dashboard.html" style="font-weight: bold">
+            <img src="Images/Logo.png" alt="Logo" style="width: 30px; aspect-ratio: 1; margin-right: 10px">Chama Systems
+        </a>
+        <button id="logoutButton" onclick="window.location.href='index.html'" class="btn btn-primary">
+            <i class="fas fa-sign-out-alt me-2"></i>Log Out
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+                    <i class="fas fa-bars me-2"></i>POS Menu
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">
+                            <i class="fas fa-home me-2"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="customer.html">
+                            <i class="fas fa-users me-2"></i>Customers
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="items.html">
+                            <i class="fas fa-box me-2"></i>Items
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="placeorder.html">
+                            <i class="fas fa-shopping-cart me-2"></i>Place Order
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="orderdetails.html">
+                            <i class="fas fa-file-invoice me-2"></i>Order Details
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-sign-out-alt me-2"></i>Log Out
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="main-content">
+    <header class="d-flex justify-content-between align-items-center py-3">
+        <h1 class="h3" style="font-weight: bold ; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Dashboard</h1>
+        <div class="user-menu " style="font-weight: bold ; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+            <span class="me-2">Welcome, Chamath</span>
+        </div>
+    </header>
+
+    <div class="row mt-4">
+        <div class="col-md-3 mb-4">
+            <div class="stat-card">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-muted mb-2">Total Sales</h6>
+                        <h3 class="mb-0">$24,500</h3>
+                    </div>
+                    <div class="stat-card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="stat-card">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-muted mb-2">Total Orders</h6>
+                        <h3 class="mb-0">1,250</h3>
+                    </div>
+                    <div class="stat-card-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="stat-card">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-muted mb-2">Total Customers</h6>
+                        <h3 class="mb-0">3,100</h3>
+                    </div>
+                    <div class="stat-card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="stat-card">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-muted mb-2">Total Items</h6>
+                        <h3 class="mb-0">450</h3>
+                    </div>
+                    <div class="stat-card-icon">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">Recent Orders</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Order #1234
+                            <span class="badge bg-primary rounded-pill">$120</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Order #1235
+                            <span class="badge bg-primary rounded-pill">$85</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Order #1236
+                            <span class="badge bg-primary rounded-pill">$210</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">Top Selling Items</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Product A
+                            <span class="badge bg-success rounded-pill">150 sold</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Product B
+                            <span class="badge bg-success rounded-pill">120 sold</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Product C
+                            <span class="badge bg-success rounded-pill">90 sold</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Customer Management</h5>
+                </div>
+                <div class="card-body">
+                    <p>Add, update, delete, and view customer information here.</p>
+                    <button onclick="window.location.href='customer.html'" class="btn btn-primary">Manage Customers</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Item Management</h5>
+                </div>
+                <div class="card-body">
+                    <p>Add, update, delete, and view item information here.</p>
+                    <button onclick="window.location.href='items.html'" class="btn btn-primary">Manage Items</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Order Management</h5>
+                </div>
+                <div class="card-body">
+                    <p>Create new orders and view order history here.</p>
+                    <button onclick="window.location.href='placeorder.html'" class="btn btn-primary me-2">New Order</button>
+                    <button button onclick="window.location.href='orderdetails.html'" class="btn btn-secondary">View Order History</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-12 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">Quick Actions</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="customer.html" class="btn btn-primary">
+                            <i class="fas fa-user-plus me-2"></i>Add Customer
+                        </a>
+                        <a href="items.html" class="btn btn-primary">
+                            <i class="fas fa-box-open me-2"></i>Add Item
+                        </a>
+                        <a href="placeorder.html" class="btn btn-primary">
+                            <i class="fas fa-shopping-cart me-2"></i>New Order
+                        </a>
+                        <a href="orderdetails.html" class="btn btn-outline-secondary">
+                            <i class="fas fa-history me-2"></i>View Order History
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

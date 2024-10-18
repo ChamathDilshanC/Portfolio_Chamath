@@ -1,0 +1,70 @@
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f5f7fa;
+    --text-color: #333;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding-top: 56px;
+}
+
+/* Navbar */
+.navbar-dark {
+    background-color: #212529 !important;
+}
+/*Dashboard @ Main Content*/
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.stat-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+}
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+.stat-card-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.btn-primary:hover {
+    background-color: #3a7bd5;
+    border-color: #3a7bd5;
+}
+.list-group-item {
+    border: none;
+    padding: 0.75rem 1.25rem;
+    background-color: transparent;
+}
+.badge {
+    font-weight: 500;
+}
+
+ #logoutButton{
+     position: absolute;
+     right: 100px;
+ }
+#logoutButton:hover {
+    background-color: red;
+}

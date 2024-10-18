@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        background-color: darkblue;
+    }
+
+    body>div{
+        width: 500px;
+        height: 500px;
+        border-radius: 100%;
+        background-color: rgb(71, 71, 71);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+    }
+    body>div>h1{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        color: white;
+    }
+
+    div::before{
+        content: '';
+        border: 1.5rem solid white;
+        border-radius: 100%;
+        border-top-color: red;
+
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+    }
+
+    div:hover::before{
+        cursor: pointer;
+        transform:rotate(360deg);
+        transition-duration: 2s;
+    }
+
+    body > h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+        background: transparent;
+        color: white;
+        font-size: 60px;
+    }
+
+</style>
+
+
+<body>
+<h1>RWMD</h1>
+<div></div>
+
+</body>
+</html>

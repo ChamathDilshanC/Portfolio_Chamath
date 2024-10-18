@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="this is the description">
+    <meta name="keywords" content="java, html, css, js, go, react, angular">
+    <meta name="author" content="ijse">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="assets/logo.png">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Oswald:wght@200..700&family=Russo+One&display=swap" rel="stylesheet">
+    <title>Assignment 03: Case 01</title>
+    <style>
+        body {
+            font-family: 'Oswald', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header styles */
+        header {
+            background: #ffffff;
+            height: 100px;
+            position: relative;
+            padding: 0 20px;
+        }
+
+        header > img {
+            height: 60px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        header > nav {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        header > nav > ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        header > nav > ul > li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        /* Main content styles */
+        main {
+            position: relative;
+            min-height: calc(100vh - 180px);
+        }
+
+        aside {
+            background: purple;
+            color: white;
+            width: 250px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        aside > nav > ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        aside > nav > ul > li {
+            margin-bottom: 10px;
+        }
+
+        main > section {
+            margin-left: 250px;
+            padding: 20px;
+            font-family: "Russo One", system-ui;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        main > section > section {
+            background: #ffffff;
+            position: relative;
+            width: 100%;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+
+        main > section > section > div {
+            background: url("assets/monkey.gif");
+            background-size: cover;
+            background-position: center;
+            width: 33.33%;
+            height: 100%;
+            position: absolute;
+            border: green 1px solid;
+        }
+
+        main > section > section > div:nth-child(2) {
+            left: 33.33%;
+        }
+
+        main > section > section > div:last-child {
+            right: 0;
+        }
+
+        footer {
+            background: gray;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        @media (max-width: 1440px) {
+            /* Laptop Large */
+            main > section {
+                margin-left: 220px;
+            }
+
+            aside {
+                width: 220px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            /* Laptop */
+            main > section {
+                margin-left: 200px;
+            }
+
+            aside {
+                width: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Tablet */
+            header {
+                height: auto;
+                padding: 10px;
+            }
+
+            header > img {
+                position: static;
+                transform: none;
+                display: block;
+                margin: 0 auto 10px;
+            }
+
+            header > nav {
+                position: static;
+                transform: none;
+                text-align: center;
+            }
+
+            main {
+                display: flex;
+                flex-direction: column;
+            }
+
+            aside {
+                width: 100%;
+                position: static;
+                order: 2;
+            }
+
+            main > section {
+                margin-left: 0;
+                order: 1;
+            }
+
+            main > section > section {
+                height: auto;
+            }
+
+            main > section > section > div {
+                position: static;
+                width: 100%;
+                height: 200px;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 425px) {
+            /* Mobile */
+            header {
+                padding: 10px;
+            }
+
+            header > img {
+                height: 50px;
+            }
+
+            header > nav {
+                right: 10px;
+            }
+
+            main > section {
+                padding: 10px;
+            }
+
+            aside {
+                padding: 10px;
+            }
+        }
+
+
+        @media (max-width: 425px) {
+            header > nav > ul > li {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 375px) {
+            main > section {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 320px) {
+            body {
+                font-size: 14px;
+            }
+
+            header > img {
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <img src="assets/ijse@1x.png" alt="logo" title="logo" width="135">
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>Service</li>
+            <li>Contacts</li>
+            <li>About Us</li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <aside>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Service</li>
+                <li>Contacts</li>
+                <li>About Us</li>
+            </ul>
+        </nav>
+    </aside>
+    <section>
+        <section>
+            <div></div>
+            <div></div>
+            <div></div>
+        </section>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus autem consequatur doloribus eos ex illo inventore iste nostrum quas, quos velit voluptas voluptatum? Distinctio dolores eaque explicabo hic nemo soluta.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus autem consequatur doloribus eos ex illo inventore iste nostrum quas, quos velit voluptas voluptatum? Distinctio dolores eaque explicabo hic nemo soluta.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus autem consequatur doloribus eos ex illo inventore iste nostrum quas, quos velit voluptas voluptatum? Distinctio dolores eaque explicabo hic nemo soluta.</p>
+    </section>
+</main>
+<footer>
+    <div>Developed by IJSE</div>
+</footer>
+</body>
+</html>

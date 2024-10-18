@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>case3</title>
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <style>
+
+        .fixed-circles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        .c-container, .c-inner1, .c-inner2 {
+            position: fixed;
+
+        }
+        .c-container {
+            width: 40vh;
+            aspect-ratio: 1/1;
+            border-radius: 100%;
+            background: #b39182;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        .c-inner1 {
+            width: 35vh;
+            aspect-ratio: 1/1;
+            border-radius: 100%;
+            background: #fa0004;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        .c-inner2 {
+            width: 30vh;
+            aspect-ratio: 1/1;
+            border-radius: 100%;
+            background: #ffffff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        .scrollable-content {
+            position: relative;
+            z-index: 1;
+        }
+        .full-container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            width: 30vh;
+            aspect-ratio: 1/1;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        #circle1 { background: #8f317a; }
+        #circle2 { background: #27a2ba; }
+        #circle3 { background: #ff5454; }
+    </style>
+</head>
+<body>
+<div class="fixed-circles">
+    <div class="c-container">
+        <div class="c-inner1">
+            <div class="c-inner2"></div>
+        </div>
+    </div>
+</div>
+
+<main class="scrollable-content">
+    <section class="full-container">
+        <div id="circle1" class="container">
+            <div class="text">Hello</div>
+        </div>
+    </section>
+    <section class="full-container">
+        <div id="circle2" class="container">
+            <div class="text">Welcome To</div>
+        </div>
+    </section>
+    <section class="full-container">
+        <div id="circle3" class="container">
+            <div class="text">Institute Of Software Engineering</div>
+        </div>
+    </section>
+</main>
+</body>
+</html>

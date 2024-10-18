@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Animation with Rotating Wheels - YouTube Style</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #0f0f0f;
+            font-family: Arial, sans-serif;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            background-color: #000;
+        }
+
+        .scene {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('Images/sky.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .background {
+            position: absolute;
+            width: 200%;
+            height: 50%;
+            background-image: url('Images/city.png');
+            background-size: auto 50%;
+            background-repeat: repeat-x;
+            animation: moveBackground 5s linear infinite;
+            top: 25%;
+        }
+
+        @keyframes moveBackground {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        .road {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 50%;
+            background-image: url('Images/road.jpg');
+            background-size: auto 100%;
+            background-repeat: repeat-x;
+            animation: moveRoad 10s linear infinite;
+        }
+
+        @keyframes moveRoad {
+            from { background-position: 0 0; }
+            to { background-position: 100% 0; }
+        }
+
+        .car-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-70%) translateY(-30%);
+            width: 25%;
+            height: auto;
+        }
+
+        .car {
+            width: 120%;
+            height: auto;
+        }
+
+        .wheel {
+            position: absolute;
+            width: 23%;
+            height: auto;
+            animation: rotateWheel 1s linear infinite;
+        }
+
+        .wheel-front {
+            bottom: 4%;
+            left: 9.8%;
+        }
+
+        .wheel-rear {
+            bottom: 4%;
+            left: 83.2%;
+        }
+
+        @keyframes rotateWheel {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .car-container :hover {
+            /*stop all animations liner */
+        }
+    </style>
+</head>
+<body>
+<div class="video-container">
+    <div class="scene">
+        <div class="background"></div>
+        <div class="road"></div>
+        <div class="car-container">
+            <img src="Images/car.png" alt="Car" class="car">
+            <img src="Images/wheel.png" alt="Front Wheel" class="wheel wheel-front">
+            <img src="Images/wheel.png" alt="Rear Wheel" class="wheel wheel-rear">
+        </div>
+    </div>
+</div>
+</body>
+</html>

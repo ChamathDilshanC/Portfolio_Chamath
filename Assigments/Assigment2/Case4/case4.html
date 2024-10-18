@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case4</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            height: 100vh;
+            overflow-y: scroll;
+        }
+        .card {
+            height: 100vh;
+            background: #ff0000;
+            font-family: Arial, sans-serif;
+            font-size: 40px;
+            font-weight: bold;
+            position: relative;
+        }
+        .card-header {
+            position: sticky;
+            top: 0;
+            height: 50px;
+            z-index: 10;
+            color: white;
+        }
+        .card-content {
+            font-family: Arial, sans-serif;
+            font-size: 100px;
+            font-weight: bold;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #000000;
+        }
+        #card1 {
+            background-color: #ffffff;
+            .card-header {
+                background-color: #fd0000;
+            }
+        }
+        #card2 {
+            background-color: #5cb6ff;
+            .card-header {
+                background-color: #004880;
+            }
+        }
+        #card3 {
+            background-color: #5e5952;
+            .card-header {
+                background-color: #282924;
+            }
+        }
+        #card4 {
+            background-color: #d62929;
+            .card-header {
+                background-color: #752a2a;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="card1" class="card">
+        <div class="card-header">Card 1</div>
+        <div class="card-content">Hello</div>
+    </div>
+    <div id="card2" class="card">
+        <div class="card-header">Card 2</div>
+        <div class="card-content">How</div>
+    </div>
+    <div id="card3" class="card">
+        <div class="card-header">Card 3</div>
+        <div class="card-content">Are</div>
+    </div>
+    <div id="card4" class="card">
+        <div class="card-header">Card 4</div>
+        <div class="card-content">You</div>
+    </div>
+</div>
+</body>
+</html>

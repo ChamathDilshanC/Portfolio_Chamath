@@ -3,254 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chamath Dilshan - A passionate UI/UX Designer and Developer.">
-    <meta name="keywords" content="Chamath Dilshan, UI/UX Designer, Developer, Portfolio">
-    <link rel="icon" type="image/x-icon" href="assets/Logo.png"> <!-- Favicon -->
-    <title>Chamath Dilshan - UI & UX Designer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <title>Welcome to My Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+            scroll-behavior: smooth;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #000;
+            color: #c8c2bd;
+            font-size: calc(var(--_size) * 0.022);
+            --_factor: min(1000px, 100vh);
+            --_size: min(var(--_factor), 100vw);
+        }
+
+        .bg {
+            width: 100%;
+            height: 100%;
+            max-width: 44em;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .bg > div {
+            position: absolute;
+            scale: 1.2;
+            opacity: 0.6;
+            width: 100%;
+            height: 100%;
+            border-radius: 100em;
+            box-shadow:
+                    inset 0 0 4em 3em rgba(238, 200, 175, 0.2),
+                    inset 0 0 2em 0.4em rgba(238, 200, 175, 0.2),
+                    0 0 0.1em 0.1em rgba(238, 200, 175, 0.2),
+                    0 0 1em 0.4em rgba(238, 200, 175, 0.3);
+        }
+
+        .bg > div:nth-child(1) {
+            transform: translateY(-64%);
+            animation: onloadbgt 1s ease-in-out forwards;
+        }
+
+        .bg > div:nth-child(2) {
+            transform: translateY(64%);
+            animation: onloadbgb 1s ease-in-out forwards;
+        }
+
+        @keyframes onloadbgt {
+            0% { transform: translateY(-70%); opacity: 0.3; }
+            100% { transform: translateY(-64%); opacity: 0.8; }
+        }
+
+        @keyframes onloadbgb {
+            0% { transform: translateY(70%); opacity: 0.3; }
+            100% { transform: translateY(64%); opacity: 0.8; }
+        }
+
+        .header-text {
+            font-size: 3em;
+            text-align: center;
+            line-height: 1.2;
+            font-weight: 700;
+            letter-spacing: -0.009em;
+            margin-bottom: 0.5em;
+        }
+
+        .glow-filter {
+            position: relative;
+            display: inline-block;
+            animation: onloadscale 1s ease-out forwards;
+        }
+
+        .glow-filter::before {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 0;
+            pointer-events: none;
+            color: #fffaf6;
+            background: linear-gradient(0deg, #dfe5ee 0%, #fffaf6 50%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: url(#glow-4);
+            opacity: 0;
+            animation: onloadopacity 1s ease-out forwards;
+        }
+
+        @keyframes onloadscale {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.02); }
+        }
+
+        @keyframes onloadopacity {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        p {
+            color: #86868b;
+            font-weight: 400;
+            background: linear-gradient(0deg, #86868b 0%, #bdc2c9 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            max-width: 28em;
+            text-align: center;
+            margin-top: 2em;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 2em;
+            padding: 0.8em 1.6em;
+            background-color: #fffaf6;
+            color: #000;
+            text-decoration: none;
+            border-radius: 2em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #dfe5ee;
+            transform: translateY(-2px);
+        }
+
+        .fade-out {
+            animation: fadeOut 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+    </style>
 </head>
 <body>
-<header class="header">
-    <nav>
-        <div class="logo-container">
-            <img src="assets/Logo.png" alt="Chama Logo" class="logo-image">
-            <a href="#" class="logo">Chama</a>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Me</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Skills</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        <button class="contact-btn">Download CV</button>
-        <!--        <div class="theme-toggle">
-                    <img src ="Assets/waning-cresent-moon&#45;&#45;night-new-moon-crescent-weather-time-waning.png" alt="Theme Toggle" class="theme-icon">
-                </div>-->
-    </nav>
-</header>
+<div class="bg">
+    <div></div>
+    <div></div>
+</div>
 
-<section class="hero">
-    <div class="hero-content">
-        <div class="hero-text">
-            <p>Hi I am</p>
-            <h2>Chamath Dilshan <span class="wave">👋</span></h2>
-            <h1>UI & UX</h1>
-            <h1 class="highlight">Developer</h1>
-            <p class="sub-text">I make meaningful and delightful digital products that create an equilibrium between user needs and business goals.</p>
-            <p class="sub-text"><b>Currently, I'm an Undergraduate Software Engineer at IJSE.</b></p>
-            <a href="#" class="cta-button">Hire Me</a>
-        </div>
-        <div class="hero-image">
-            <div class="profile-image-container">
-                <img src="assets/ProfilePhoto.png" alt="Chamath Dilshan">
-            </div>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-            </div>
-        </div>
-    </div>
-</section>
+<svg class="filters" width="1440px" height="300px" viewBox="0 0 1440 300" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <filter id="glow-4" color-interpolation-filters="sRGB" x="-50%" y="-200%" width="200%" height="500%">
+            <fegaussianblur in="SourceGraphic" stddeviation="4" result="blur4"></fegaussianblur>
+            <fegaussianblur in="SourceGraphic" stddeviation="19" result="blur19"></fegaussianblur>
+            <fegaussianblur in="SourceGraphic" stddeviation="9" result="blur9"></fegaussianblur>
+            <fegaussianblur in="SourceGraphic" stddeviation="30" result="blur30"></fegaussianblur>
+            <fecolormatrix in="blur4" result="color-0-blur" type="matrix" values="1 0 0 0 0 0 0.980392156862745 0 0 0 0 0 0.9647058823529412 0 0 0 0 0 0.8 0"></fecolormatrix>
+            <feoffset in="color-0-blur" result="layer-0-offsetted" dx="0" dy="0"></feoffset>
+            <fecolormatrix in="blur19" result="color-1-blur" type="matrix" values="0.8156862745098039 0 0 0 0 0 0.49411764705882355 0 0 0 0 0 0.26274509803921575 0 0 0 0 0 1 0"></fecolormatrix>
+            <feoffset in="color-1-blur" result="layer-1-offsetted" dx="0" dy="2"></feoffset>
+            <fecolormatrix in="blur9" result="color-2-blur" type="matrix" values="1 0 0 0 0 0 0.6666666666666666 0 0 0 0 0 0.36470588235294116 0 0 0 0 0 0.65 0"></fecolormatrix>
+            <feoffset in="color-2-blur" result="layer-2-offsetted" dx="0" dy="2"></feoffset>
+            <fecolormatrix in="blur30" result="color-3-blur" type="matrix" values="1 0 0 0 0 0 0.611764705882353 0 0 0 0 0 0.39215686274509803 0 0 0 0 0 1 0"></fecolormatrix>
+            <feoffset in="color-3-blur" result="layer-3-offsetted" dx="0" dy="2"></feoffset>
+            <fecolormatrix in="blur30" result="color-4-blur" type="matrix" values="0.4549019607843137 0 0 0 0 0 0.16470588235294117 0 0 0 0 0 0 0 0 0 0 0 1 0"></fecolormatrix>
+            <feoffset in="color-4-blur" result="layer-4-offsetted" dx="0" dy="16"></feoffset>
+            <fecolormatrix in="blur30" result="color-5-blur" type="matrix" values="0.4235294117647059 0 0 0 0 0 0.19607843137254902 0 0 0 0 0 0.11372549019607843 0 0 0 0 0 1 0"></fecolormatrix>
+            <feoffset in="color-5-blur" result="layer-5-offsetted" dx="0" dy="64"></feoffset>
+            <fecolormatrix in="blur30" result="color-6-blur" type="matrix" values="0.21176470588235294 0 0 0 0 0 0.10980392156862745 0 0 0 0 0 0.07450980392156863 0 0 0 0 0 1 0"></fecolormatrix>
+            <feoffset in="color-6-blur" result="layer-6-offsetted" dx="0" dy="64"></feoffset>
+            <fecolormatrix in="blur30" result="color-7-blur" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.68 0"></fecolormatrix>
+            <feoffset in="color-7-blur" result="layer-7-offsetted" dx="0" dy="64"></feoffset>
+            <femerge>
+                <femergenode in="layer-0-offsetted"></femergenode>
+                <femergenode in="layer-1-offsetted"></femergenode>
+                <femergenode in="layer-2-offsetted"></femergenode>
+                <femergenode in="layer-3-offsetted"></femergenode>
+                <femergenode in="layer-4-offsetted"></femergenode>
+                <femergenode in="layer-5-offsetted"></femergenode>
+                <femergenode in="layer-6-offsetted"></femergenode>
+                <femergenode in="layer-7-offsetted"></femergenode>
+                <femergenode in="layer-0-offsetted"></femergenode>
+                <femergenode in="SourceGraphic"></femergenode>
+            </femerge>
+        </filter>
+    </defs>
+</svg>
 
-<!--About Section-->
-<section class="about-section">
-    <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <div class="about-left">
-                <p class="about-description">My goal is to leverage my skills and knowledge to make a positive impact and contribute to exciting and meaningful projects.</p>
-                <div class="skills-container">
-                    <div class="skill-item">
-                        <span class="skill-name">UX</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Website Design</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">App Design</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Graphic Design</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 75%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="about-right">
-                <div class="profile-image">
-                    <img src="assets/Aboutphoto.png" alt="About photo" width="500px" height="500px">
-                </div>
-                <div class="about-text">
-                    <h3>A bit about me</h3>
-                    <p>I am a UI/UX designer who is passionate about creating beautiful and joyful digital experiences. Besides design, I love music, games and travelling.</p>
-                </div>
-                <div class="hobbies">
-                    <div class="hobby-image">
-                        <img src="assets/Gamingphoto.png" alt="GamingPhoto">
-                    </div>
-                    <div class="hobby-image">
-                        <img src="assets/Gitur.jpg" alt="Guitar">
-                    </div>
-                    <div class="hobby-image">
-                        <img src="assets/hike.png" alt="Travelling">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<div class="header-text" aria-hidden="true">
+    Welcome to<br>
+    <span class="glow-filter" data-text="My Creative Portfolio">My Creative Portfolio</span>
+</div>
 
+<p>Explore a showcase of innovative projects and designs that push the boundaries of creativity and technology.</p>
 
-<!--Services Section-->
-<section class="services">
-    <div class="services-content">
-        <h2>Services</h2>
-        <p>Combines both frontend and backend development skills to handle the complete development process.</p>
-        <div class="service-grid">
-            <div class="service-item">
-                <img src="" alt="Web Development Icon">
-                <h3>Web Development</h3>
-                <p>Proficient in front-end and back-end development, providing seamless user experiences and robust solutions.</p>
-            </div>
-            <div class="service-item">
-                <img src="" alt="Mobile Development Icon">
-                <h3>Mobile Development</h3>
-                <p>Experienced in creating high-performance mobile applications using Flutter and React Native for Android and iOS.</p>
-            </div>
-            <div class="service-item">
-                <img src="" alt="POS Development Icon">
-                <h3>POS Development</h3>
-                <p>Skilled in developing efficient and reliable Point of Sale (POS) systems, providing customized management solutions.</p>
-            </div>
-            <div class="service-item">
-                <img src="" alt="UI/UX Design Icon">
-                <h3>UI UX Designs</h3>
-                <p>Proficient in creating intuitive and user-friendly interfaces with a focus on enhancing user experience.</p>
-            </div>
-        </div>
-    </div>
-</section>
+<a href="#" class="cta-button" id="viewWorkBtn">View My Work</a>
 
+<script>
+    function navigateToPortfolio() {
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+            window.location.href = 'portfolio.html';
+        }, 1000);
+    }
 
-<!--Skills Section-->
-<section class="skills">
-    <div class="skills-content">
-        <h2>Skills</h2>
-        <p>I possess a strong foundation in programming with proficiency in several languages and frameworks. My expertise includes Java, JavaScript, TypeScript, and HTML/CSS, among others.</p>
-        <p>I have extensive experience working with frameworks such as React, Flutter, and Node.js, and I'm skilled in using tools like Docker, Git, and various testing libraries including Jest and Cypress.</p>
-        <p>My ability to work with databases like PostgreSQL and Firebase, along with cloud services such as AWS, enables me to build robust and scalable applications.</p>
-        <div class="skills-grid">
-            <img src="" alt="Skills Logos">
-        </div>
-    </div>
-</section>
+    document.getElementById('viewWorkBtn').addEventListener('click', function(e) {
+        e.preventDefault();
+        navigateToPortfolio();
+    });
 
-
-<!--Projects Section-->
-<section class="projects">
-    <div class="projects-content">
-        <h2>My Projects</h2>
-        <p>Lorem ipsum dolor sit amet consectetur. Mollis erat duis aliquam mauris est risus lectus. Phasellus consequat urna tellus</p>
-        <div class="project-filters">
-            <button>All</button>
-            <button>UI/UX</button>
-            <button>Web Design</button>
-            <button>App Design</button>
-            <button>Graphic Design</button>
-        </div>
-        <div class="project-grid">
-            <div class="project-item">
-                <img src="" alt="POS Landing Page Design">
-                <h3>Pos Landing Page Design</h3>
-            </div>
-            <div class="project-item">
-                <img src="" alt="Business Landing Page Design">
-                <h3>Business Landing Page Design</h3>
-            </div>
-            <div class="project-item">
-                <img src="" alt="Ecom Web Page Design">
-                <h3>Ecom Web Page Design</h3>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!--Contact Section-->
-<section class="contact">
-    <div class="contact-content">
-        <h2>Let's Work Together</h2>
-        <p>Feel free to reach out if you'd like to discuss a project, ask a question, or just connect. I'm always open to exploring new opportunities and collaborations in the world of software development.</p>
-        <form>
-            <label>
-                <input type="email" placeholder="Enter Your Email" />
-            </label>
-            <label>
-                <textarea placeholder="Message"></textarea>
-            </label>
-            <button type="submit">Contact Me</button>
-        </form>
-    </div>
-</section>
-
-
-<!--Gallery Section-->
-<section id="gallery">
-    <div class="container">
-        <h2>Gallery</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="" alt="Image 1">
-            </div>
-            <div class="gallery-item">
-                <img src="" alt="Image 2">
-            </div>
-            <div class="gallery-item">
-                <img src="" alt="Image 3">
-            </div>
-            <div class="gallery-item">
-                <img src="" alt="Image 4">
-            </div>
-            <div class="gallery-item">
-                <img src="" alt="Image 5">
-            </div>
-            <div class="gallery-item">
-                <img src="" alt="Image 6">
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<footer>
-    <div class="footer-content">
-        <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-        </div>
-    </div>
-</footer>
-
-
+    setTimeout(navigateToPortfolio, 3000);
+</script>
 </body>
 </html>

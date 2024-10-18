@@ -1,0 +1,467 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    scroll-behavior: smooth;
+}
+
+/* Header and Navigation Styles */
+.header {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    text-decoration: none;
+}
+
+.logo:hover {
+    color: #FF6347;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #FF6347;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #FF6347;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.contact-btn {
+    background-color: #FF6347;
+    color: #fff;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(255, 99, 71, 0.2);
+    margin-right: 10px;
+}
+
+.contact-btn:hover {
+    background-color: #e5533f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(255, 99, 71, 0.3);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 150px 20px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.hero-text h1 {
+    font-size: 56px;
+    line-height: 1.2;
+    color: #4a4a4a;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero-text h2 {
+    font-size: 40px;
+    margin: 10px 0;
+    color: #4a4a4a;
+}
+
+.hero-text .highlight {
+    color: #FF6347;
+}
+
+.hero-text .highlight::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    bottom: 5px;
+    left: 0;
+    z-index: -1;
+}
+
+.hero-text h3.initials {
+    font-size: 72px;
+    color: #FF6347;
+    margin: 20px 0;
+    letter-spacing: 2px;
+    opacity: 0.1;
+    position: absolute;
+    top: -30px;
+    left: -20px;
+    z-index: -1;
+}
+
+.wave {
+    display: inline-block;
+    animation:infinite 2.5s wave-animation;
+    transform-origin: 70% 70%;
+    margin-left: 10px;
+    font-size: 50px;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(14deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+    60% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.sub-text {
+    font-size: 18px;
+    margin-top: 20px;
+    line-height: 1.8;
+    color: #666;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #FF6347;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+    box-shadow: 0 4px 6px rgba(255, 99, 71, 0.2);
+}
+
+.cta-button:hover {
+    background-color: #e5533f;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(255, 99, 71, 0.3);
+}
+
+/* Profile Image Styling */
+.hero-image {
+    position: relative;
+    text-align: center;
+}
+
+.profile-image-container {
+    position: relative;
+    max-width: 350px;
+    max-height: 350px;
+    margin: 0 auto;
+    width: 350px;
+    height: 350px;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #FF6347, #FF8C00);
+    padding: 10px;
+    transition: all 0.5s ease;
+}
+
+.profile-image-container:hover {
+    border-radius: 50%;
+    transform: scale(1.05);
+}
+
+.profile-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.5s ease;
+    border-radius: inherit;
+}
+
+.profile-image-container:hover img {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.social-icons {
+    margin-top: 30px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: #4a4a4a;
+    margin: 0 15px;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    color: #FF6347;
+    transform: translateY(-3px);
+}
+
+/* Scroll effect */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -20px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.header.scrolled {
+    background-color: #fff;
+    animation: fadeInDown 0.5s ease-out;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text, .hero-image {
+        max-width: 100%;
+    }
+
+    .hero-image {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide navigation links on small screens */
+    }
+
+
+    .contact-btn {
+        display: none; /* Hide contact button on small screens */
+    }
+
+    .hero-text h1 {
+        font-size: 40px;
+    }
+
+    .hero-text h2 {
+        font-size: 30px;
+    }
+
+    .profile-image-container {
+        width: 280px;
+        height: 280px;
+    }
+}
+
+.Logo-image {
+    position: relative;
+    left: -20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 10px;
+
+}
+/* Add these new animation keyframes and styles */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromRight {
+    from { transform: translateX(50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromBottom {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Apply animations to specific elements */
+
+.logo-container {
+    animation: slideInFromLeft 0.5s ease-out;
+}
+
+.nav-links li {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.nav-links li:nth-child(1) { animation-delay: 0.1s; }
+.nav-links li:nth-child(2) { animation-delay: 0.2s; }
+.nav-links li:nth-child(3) { animation-delay: 0.3s; }
+.nav-links li:nth-child(4) { animation-delay: 0.4s; }
+.nav-links li:nth-child(5) { animation-delay: 0.5s; }
+.nav-links li:nth-child(6) { animation-delay: 0.6s; }
+
+.contact-btn {
+    animation: slideInFromRight 0.5s ease-out;
+}
+
+.hero-text {
+    animation: slideInFromLeft 0.8s ease-out;
+}
+
+.hero-text h1, .hero-text h2 {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.hero-text .highlight {
+    animation: fadeIn 0.8s ease-out infinite alternate;
+    animation-delay: 0.5s;
+}
+
+.sub-text {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 0.7s;
+}
+
+.cta-button {
+    opacity: 0;
+    animation: slideInFromBottom 0.8s ease-out forwards;
+    animation-delay: 1s;
+}
+
+.profile-image-container {
+    animation: scaleIn 1s ease-out;
+}
+
+.social-icons a {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.social-icons a:nth-child(1) { animation-delay: 1.2s; }
+.social-icons a:nth-child(2) { animation-delay: 1.3s; }
+.social-icons a:nth-child(3) { animation-delay: 1.4s; }
+.social-icons a:nth-child(4) { animation-delay: 1.5s; }
+.social-icons a:nth-child(5) { animation-delay: 1.6s; }
+
+/* Add animations to other sections */
+
+.about, .services, .skills, .projects, .contact, #gallery {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.about-info > div, .service-item, .skills-grid img, .project-item, .gallery-item {
+    opacity: 0;
+    animation: slideInFromBottom 0.8s ease-out forwards;
+}
+
+/* Trigger animations when elements come into view */
+.animate-on-scroll {
+    opacity: 0;
+    transition: opacity 0.8s, transform 0.8s;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
