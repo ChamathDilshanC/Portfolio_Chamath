@@ -17,7 +17,13 @@ const assignments = [
         image: 'Assigments/Assets/Assigment.png',
         github: 'https://github.com/ChamathDilshanC/Portfolio_Chamath',
         cases: [
-            { title: 'Case 1', description: 'Implement The Portfolio', path: 'index.html', image: 'Assigments/Assets/A1/Case1.png ' },
+            {
+                title: 'Case 1',
+                description: 'Implement The Portfolio',
+                path: 'index.html',
+                image: 'Assigments/Assets/A1/Case1.png',
+                github: 'https://github.com/ChamathDilshanC/Portfolio_Chamath'
+            }
         ]
     },
     {
@@ -28,78 +34,194 @@ const assignments = [
         image: 'Assigments/Assets/Assigment.png',
         github: 'https://github.com/ChamathDilshanC/Chat-App-UI',
         cases: [
-            { title: 'Case 1', description: 'A colorful grid layout with four quadrants in red, green, yellow, and pink. Each quadrant has a small red square, except for the center which has a white circle with a red dot.', path: 'Assigments/Assigment2/Case1/case1.html', image: 'Assigments/Assets/A2/Case1.png ' },
-            { title: 'Case 2', description: 'A dark blue rectangular layout with three repeated orange "f" logos (possibly representing Facebook), followed by several lines of text, suggesting a content or information display area.', path: 'Assigments/Assigment2/Case2/case2.html', image: 'Assigments/Assets/A2/Case2.png' },
-            { title: 'Case 3', description: 'A simple circular design with concentric circles in different colors (purple, red, orange), possibly representing a button or icon.', path: 'Assigments/Assigment2/Case3/case3.html', image: 'Assigments/Assets/A2/Case3.png' },
-            { title: 'Case 4', description: 'A card-like layout with a blue background and the word "How" in black text, suggesting it could be part of a tutorial or instruction interface.', path: 'Assigments/Assigment2/Case4/case4.html', image: 'Assigments/Assets/A2/Case4.png' },
-            { title: 'Case 5', description: 'A colorful grid layout made up of 12 rectangles in various colors (red, green, blue, purple, yellow, etc.), arranged in a 4x3 pattern.', path: 'Assigments/Assigment2/Case5/case5.html', image: 'Assigments/Assets/A2/Case5.png' },
-            { title: 'Case 6', description: 'Another colorful grid layout, but with fewer, larger rectangles in a more asymmetrical arrangement. ', path: 'Assigments/Assigment2/Case6/case6.html', image: 'Assigments/Assets/A2/Case6.png' },
+            {
+                title: 'Case 1',
+                description: 'A colorful grid layout with four quadrants in red, green, yellow, and pink.',
+                path: 'Assigments/Assigment2/Case1/case1.html',
+                image: 'Assigments/Assets/A2/Case1.png',
+                github: 'https://github.com/ChamathDilshanC/Chat-App-UI/tree/main/Assigments/Assigment2/Case1'
+            },
+            {
+                title: 'Case 2',
+                description: 'A dark blue rectangular layout with three repeated orange "f" logos.',
+                path: 'Assigments/Assigment2/Case2/case2.html',
+                image: 'Assigments/Assets/A2/Case2.png',
+                github: 'https://github.com/ChamathDilshanC/Chat-App-UI/tree/main/Assigments/Assigment2/Case2'
+            },
+            {
+                title: 'Case 3',
+                description: 'A simple circular design with concentric circles in different colors.',
+                path: 'Assigments/Assigment2/Case3/case3.html',
+                image: 'Assigments/Assets/A2/Case3.png',
+                github: 'https://github.com/ChamathDilshanC/Chat-App-UI/tree/main/Assigments/Assigment2/Case3'
+            },
+            {
+                title: 'Case 4',
+                description: 'A card-like layout with a blue background and the word "How".',
+                path: 'Assigments/Assigment2/Case4/case4.html',
+                image: 'Assigments/Assets/A2/Case4.png',
+                github: 'https://github.com/ChamathDilshanC/Chat-App-UI/tree/main/Assigments/Assigment2/Case4'
+            },
+            {
+                title: 'Case 5',
+                description: 'A colorful grid layout made up of 12 rectangles.',
+                path: 'Assigments/Assigment2/Case5/case5.html',
+                image: 'Assigments/Assets/A2/Case5.png',
+                github: 'https://github.com/ChamathDilshanC/Chat-App-UI/tree/main/Assigments/Assigment2/Case5'
+            },
+            {
+                title: 'Case 6',
+                description: 'Another colorful grid layout with asymmetrical arrangement.',
+                path: 'Assigments/Assigment2/Case6/case6.html',
+                image: 'Assigments/Assets/A2/Case6.png',
+                github: 'https://github.com/ChamathDilshanC/Chat-App-UI/tree/main/Assigments/Assigment2/Case6'
+            }
         ]
     },
     {
         id: 9,
         type: 'assignment',
         title: 'Assignment 03',
-        description: 'Implemented various data structures like linked lists, trees, and graphs in C++. Includes comprehensive unit tests.',
+        description: 'CSS Animations and Transitions',
         image: 'Assigments/Assets/Assigment.png',
-        github: 'https://github.com/ChamathDilshanC/Chat-App-UI',
+        github: 'https://github.com/ChamathDilshanC/Assignment-03',
         cases: [
-            { title: 'Case 1', description: 'Simple Menu Bar', path: 'Assigments/Assigment3/Case1/case1.html', image: 'Assigments/Assets/A3/Case1.png ' },
-            { title: 'Case 2', description: 'Hover Effect Animation', path: 'Assigments/Assigment3/Case2/case2.html', image: 'Assigments/Assets/A3/Case2.png' },
-            { title: 'Case 3', description: 'Floating Box Animation', path: 'Assigments/Assigment3/Case3/case3.html', image: 'Assigments/Assets/A3/Case3.png' },
-            { title: 'Case 4', description: 'Warterdrop Animation', path: 'Assigments/Assigment3/Case4/case4.html', image: 'Assigments/Assets/A3/Case4.png' },
-            { title: 'Case 5', description: 'Image Slider', path: 'Assigments/Assigment3/Case5/case5.html', image: 'Assigments/Assets/A3/Case5.png' },
-            { title: 'Case 6', description: 'Car Animation', path: 'Assigments/Assigment3/Case6/CarAnimation.html', image: 'Assigments/Assets/A3/Case6.png' },
+            {
+                title: 'Case 1',
+                description: 'Simple Menu Bar',
+                path: 'Assigments/Assigment3/Case1/case1.html',
+                image: 'Assigments/Assets/A3/Case1.png',
+                github: 'https://github.com/ChamathDilshanC/Assignment-03/tree/main/Case1'
+            },
+            {
+                title: 'Case 2',
+                description: 'Hover Effect Animation',
+                path: 'Assigments/Assigment3/Case2/case2.html',
+                image: 'Assigments/Assets/A3/Case2.png',
+                github: 'https://github.com/ChamathDilshanC/Assignment-03/tree/main/Case2'
+            },
+            {
+                title: 'Case 3',
+                description: 'Floating Box Animation',
+                path: 'Assigments/Assigment3/Case3/case3.html',
+                image: 'Assigments/Assets/A3/Case3.png',
+                github: 'https://github.com/ChamathDilshanC/Assignment-03/tree/main/Case3'
+            },
+            {
+                title: 'Case 4',
+                description: 'Warterdrop Animation',
+                path: 'Assigments/Assigment3/Case4/case4.html',
+                image: 'Assigments/Assets/A3/Case4.png',
+                github: 'https://github.com/ChamathDilshanC/Assignment-03/tree/main/Case4'
+            },
+            {
+                title: 'Case 5',
+                description: 'Image Slider',
+                path: 'Assigments/Assigment3/Case5/case5.html',
+                image: 'Assigments/Assets/A3/Case5.png',
+                github: 'https://github.com/ChamathDilshanC/Assignment-03/tree/main/Case5'
+            },
+            {
+                title: 'Case 6',
+                description: 'Car Animation',
+                path: 'Assigments/Assigment3/Case6/CarAnimation.html',
+                image: 'Assigments/Assets/A3/Case6.png',
+                github: 'https://github.com/ChamathDilshanC/Assignment-03/tree/main/Case6'
+            }
         ]
     },
     {
         id: 10,
         type: 'assignment',
         title: 'Assignment 04',
-        description: 'Design layout using flexible grids, images, and CSS media queries.\n' +
-            'Implement HTML structure and CSS styles to adapt to various screen sizes.',
+        description: 'Design layout using flexible grids, images, and CSS media queries.',
         image: 'Assigments/Assets/Assigment.png',
-        github: 'https://github.com/ChamathDilshanC/Chat-App-UI',
+        github: 'https://github.com/ChamathDilshanC/Assignment-04',
         cases: [
-            { title: 'Case 1', description: 'Design layout using flexible grids, images, and CSS media queries.', path: 'Assigments/Assigment4/Assigment-4.html', image: 'Assigments/Assets/A4/Case1.png ' },
+            {
+                title: 'Case 1',
+                description: 'Design layout using flexible grids, images, and CSS media queries.',
+                path: 'Assigments/Assigment4/Assigment-4.html',
+                image: 'Assigments/Assets/A4/Case1.png',
+                github: 'https://github.com/ChamathDilshanC/Assignment-04/tree/main/Case1'
+            }
         ]
     },
     {
         id: 11,
         type: 'assignment',
         title: 'Assignment 05',
-        description: 'Design user interface for inventory management, sales processing, and reporting.\n' +
-            'Implement backend for transaction handling, inventory tracking, and data storage.',
+        description: 'Design user interface for inventory management, sales processing, and reporting.',
         image: 'Assigments/Assets/Assigment.png',
-        github: 'https://github.com/ChamathDilshanC/Chat-App-UI',
+        github: 'https://github.com/ChamathDilshanC/Assignment-05',
         cases: [
-            { title: 'Case 1', description: 'Implement a Pos System.', path: 'Assigments/Assigment5/index.html', image: 'Assigments/Assets/A5/Case1.png ' },
+            {
+                title: 'Case 1',
+                description: 'Implement a Pos System.',
+                path: 'Assigments/Assigment5/index.html',
+                image: 'Assigments/Assets/A5/Case1.png',
+                github: 'https://github.com/ChamathDilshanC/Assignment-05/tree/main/Case1'
+            }
         ]
     },
     {
         id: 12,
         type: 'assignment',
         title: 'Assignment 06',
-        description: 'Gather and curate your best work samples, projects, and achievements.\n' +
-            'Design and build a website or platform to showcase your work and skills effectively.',
+        description: 'Design and build a website or platform to showcase your work and skills effectively.',
         image: 'Assigments/Assets/Assigment.png',
         github: 'https://github.com/ChamathDilshanC/Portfolio_Chamath',
         cases: [
-            { title: 'Case 1', description: 'Created My Own Portfolio ', path: 'index.html', image: 'Assigments/Assets/A6/Case1.png ' },
+            {
+                title: 'Case 1',
+                description: 'Created My Own Portfolio',
+                path: 'index.html',
+                image: 'Assigments/Assets/A6/Case1.png',
+                github: 'https://github.com/ChamathDilshanC/Portfolio_Chamath'
+            }
         ]
     },
     {
         id: 13,
         type: 'assignment',
         title: 'Assignment 07',
-        description: 'Created Single Page Pos Application. [ SPA ]\n' +
-            'Made No Refreshing Pages.',
+        description: 'Created Single Page Pos Application. [ SPA ]',
         image: 'Assigments/Assets/Assigment.png',
         github: 'https://github.com/ChamathDilshanC/Pos-System/tree/spa',
         cases: [
-            { title: 'Case 1', description: 'Made No Refreshing Pages.', path: 'Assigments/Assigment6/index.html', image: 'Assigments/Assets/A5/Case1.png ' },
+            {
+                title: 'Case 1',
+                description: 'Made No Refreshing Pages.',
+                path: 'Assigments/Assigment6/index.html',
+                image: 'Assigments/Assets/A5/Case1.png',
+                github: 'https://github.com/ChamathDilshanC/Pos-System/tree/spa'
+            }
         ]
     },
+    {
+        id: 14,
+        type: 'assignment',
+        title: 'Assignment 08',
+        description: 'Create the graphical view of a Que Process Using HTML, CSS and JS.',
+        image: 'Assigments/Assets/Assigment.png',
+        github: 'https://github.com/ChamathDilshanC/Assignment-08',
+        cases: [
+            {
+                title: 'Case 1',
+                description: 'Queue Process Visualization',
+                path: 'Assigments/Assigment6/index.html',
+                image: 'Assigments/Assets/A5/Case1.png',
+                github: 'https://github.com/ChamathDilshanC/Assignment-08/tree/main/Case1'
+            },
+            {
+                title: 'Case 2',
+                description: 'Queue Animation Implementation',
+                path: 'Assigments/Assigment6/index.html',
+                image: 'Assigments/Assets/A5/Case1.png',
+                github: 'https://github.com/ChamathDilshanC/Assignment-08/tree/main/Case2'
+            }
+        ]
+    }
 ];
 
 const allItems = [...projects, ...assignments];
@@ -133,7 +255,6 @@ function createCard(item) {
         </div>
     `;
 
-    // Add event listeners
     const githubLink = card.querySelector('.github-link');
     githubLink.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -148,6 +269,41 @@ function createCard(item) {
             openPopup(item.id);
         });
     }
+
+    return card;
+}
+
+function createPopupCard(caseItem, assignmentId) {
+    const card = document.createElement('div');
+    card.className = 'popup-card';
+
+    // Find the parent assignment to get the default GitHub path if case doesn't have one
+    const parentAssignment = assignments.find(a => a.id === assignmentId);
+    const githubPath = caseItem.github || `${parentAssignment.github}/tree/main/${caseItem.path}`;
+
+    card.innerHTML = `
+        <img src="${caseItem.image}" alt="${caseItem.title}" class="popup-card-image">
+        <div class="popup-card-content">
+            <h3 class="popup-card-title">${caseItem.title}</h3>
+            <p>${caseItem.description}</p>
+            <div class="popup-card-actions">
+                <a href="${githubPath}" target="_blank" rel="noopener noreferrer" class="github-link">
+                    <svg class="github-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <button class="run-button" onclick="openRunInterface(${assignmentId}, '${caseItem.path}')">
+                    RUN
+                </button>
+            </div>
+        </div>
+    `;
+
+    const githubLink = card.querySelector('.github-link');
+    githubLink.addEventListener('click', (e) => {
+        e.stopPropagation();
+        console.log('GitHub link clicked:', githubPath);
+    });
 
     return card;
 }
@@ -186,29 +342,6 @@ function updateSlider(button) {
     } else {
         console.error('Slider element not found');
     }
-}
-
-function createPopupCard(caseItem, assignmentId) {
-    const card = document.createElement('div');
-    card.className = 'popup-card';
-    card.innerHTML = `
-        <img src="${caseItem.image}" alt="${caseItem.title}" class="popup-card-image">
-        <div class="popup-card-content">
-            <h3 class="popup-card-title">${caseItem.title}</h3>
-            <p>${caseItem.description}</p>
-            <div class="popup-card-actions">
-                <a href="#" class="github-link" onclick="event.preventDefault(); alert('GitHub repository for this case');">
-                    <svg class="github-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                </a>
-                <button class="run-button" onclick="openRunInterface(${assignmentId}, '${caseItem.path}')">
-                    RUN
-                </button>
-            </div>
-        </div>
-    `;
-    return card;
 }
 
 function openPopup(assignmentId) {
@@ -330,7 +463,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Expose functions to global scope for debugging
+// Expose functions to global scope
 window.openPopup = openPopup;
 window.closePopup = closePopup;
 window.openRunInterface = openRunInterface;

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../normalize.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html, body {
+        height: 100%;
+        width: 100%;
+    }
+
+    body > section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+
+    section > section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .card {
+        width: 200px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        margin: 10px;
+    }
+
+    .first-card {
+        align-self: flex-start;
+    }
+
+    .last-card {
+        align-self: flex-end;
+    }
+
+    .line {
+        width: 100%;
+        height: 2px;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 25px;
+    }
+
+    main {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+<body>
+<section>
+    <section>
+        <div class="card first-card"></div>
+        <div class="line"></div>
+        <main>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </main>
+        <div class="line"></div>
+        <div class="card last-card"></div>
+    </section>
+</section>
+</body>
+<script>
+    let colors = [ "green", "blue", "yellow", "hotpink","pink", "red"];
+
+    let cards = document.getElementsByClassName("card");
+    setInterval(function () {
+        let last = colors.pop();
+        colors.unshift(last);
+        for (let i = 0; i < cards.length; i++) {
+            cards[i].style.backgroundColor = colors[i];
+        }
+
+    }, 1000);
+
+</script>
+</html>
