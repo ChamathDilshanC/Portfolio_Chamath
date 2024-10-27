@@ -265,22 +265,8 @@ let currentFilter = 'all';
 let currentIndex = 0;
 
 function createCard(item) {
-    // Create wrapper div to control card width
-    const cardWrapper = document.createElement('div');
-    cardWrapper.className = 'card-wrapper';
-    cardWrapper.style.cssText = `
-        width: 100%;
-        display: flex;
-        justify-content: flex-start;
-    `;
-
     const card = document.createElement('div');
     card.className = 'card';
-    card.style.cssText = `
-        width: 100%;
-        max-width: 360px; /* Or your desired card width */
-    `;
-
     card.innerHTML = `
         <img src="${item.image}" alt="${item.title}" class="card-image">
         <div class="card-content">
@@ -303,8 +289,6 @@ function createCard(item) {
         </div>
     `;
 
-    cardWrapper.appendChild(card);
-
     const githubLink = card.querySelector('.github-link');
     githubLink.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -320,9 +304,8 @@ function createCard(item) {
         });
     }
 
-    return cardWrapper;
+    return card;
 }
-
 
 function createPopupCard(caseItem, assignmentId) {
     const card = document.createElement('div');
@@ -366,33 +349,14 @@ function updateCards() {
         return;
     }
     cardGrid.innerHTML = '';
-
     const itemsToShow = currentItems.slice(currentIndex, currentIndex + 3);
-
-    // Add grid container styles
-    cardGrid.style.cssText = `
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        width: 100%;
-    `;
-
-    // If there's only one item in the last row, adjust its grid column
-    if (itemsToShow.length === 1) {
-        cardGrid.style.gridTemplateColumns = 'repeat(3, 1fr)';
-        const card = createCard(itemsToShow[0]);
-        card.style.gridColumn = '1 / 2'; // Make it take only one column
+    itemsToShow.forEach((item, index) => {
+        const card = createCard(item);
         cardGrid.appendChild(card);
-    } else {
-        // Add all cards normally
-        itemsToShow.forEach((item, index) => {
-            const card = createCard(item);
-            cardGrid.appendChild(card);
-            setTimeout(() => {
-                card.classList.add('show');
-            }, index * 100);
-        });
-    }
+        setTimeout(() => {
+            card.classList.add('show');
+        }, index * 100);
+    });
 }
 
 function filterItems(filter) {
