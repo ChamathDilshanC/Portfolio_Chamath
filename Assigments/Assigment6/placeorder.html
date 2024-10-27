@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Order</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { padding-top: 60px; }
+        .card { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="dashboard.html" style="font-weight: bold">
+            <img src="Images/Logo.png" alt="Logo" style="width: 30px; aspect-ratio: 1; margin-right: 10px">Chama Systems
+        </a>
+        <button id="logoutButton" onclick="window.location.href='index.html'" class="btn btn-primary">
+            <i class="fas fa-sign-out-alt me-2"></i>Log Out
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+                    <i class="fas fa-bars me-2"></i>POS Menu
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="dashboard.html">
+                            <i class="fas fa-home me-2"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="customer.html">
+                            <i class="fas fa-users me-2"></i>Customers
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="items.html">
+                            <i class="fas fa-box me-2"></i>Items
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-shopping-cart me-2"></i>Place Order
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="orderdetails.html">
+                            <i class="fas fa-file-invoice me-2"></i>Order Details
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-sign-out-alt me-2"></i>Log Out
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    <h2 class="mb-4">Place Order</h2>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">Customer Details</h5>
+                    <form id="customerForm">
+                        <div class="mb-3">
+                            <label for="customerId" class="form-label">Select Customer</label>
+                            <select class="form-select" id="customerId" required>
+                                <option value="">Choose a customer...</option>
+                            </select>
+                        </div>
+                    </form>
+                    <div id="customerDetails" class="mt-3" style="display: none;">
+                        <p><strong>Name:</strong> <span id="customerName"></span></p>
+                        <p><strong>Email:</strong> <span id="customerEmail"></span></p>
+                        <p><strong>Phone:</strong> <span id="customerPhone"></span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">Add Item to Order</h5>
+                    <form id="itemForm">
+                        <div class="mb-3">
+                            <label for="itemId" class="form-label">Select Item</label>
+                            <select class="form-select" id="itemId" required>
+                                <option value="">Choose an item...</option>
+                            </select>
+                        </div>
+                        <div id="itemDetails" class="mb-3" style="display: none;">
+                            <p><strong>Price:</strong> $<span id="itemPrice"></span></p>
+                            <p><strong>Available Quantity:</strong> <span id="itemQuantity"></span></p>
+                        </div>
+                        <div class="mb-3">
+                            <label for="orderQuantity" class="form-label">Order Quantity</label>
+                            <input type="number" class="form-control" id="orderQuantity" min="1" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add to Order</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">Current Order</h5>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody id="orderItems">
+                        </tbody>
+                    </table>
+                    <div class="text-end">
+                        <h5>Total: $<span id="orderTotal">0.00</span></h5>
+                        <button id="placeOrderBtn" class="btn btn-success mt-2" disabled>Place Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script>
+    let customers = {
+        1001: { id: 1001, name: "Chamath", email: "Chamath@example.com", phone: "123-456-7890" },
+        1002: { id: 1002, name: "Dilshan", email: "Dilshan@example.com", phone: "987-654-3210" }
+    };
+
+    let items = {
+        1001: { id: 1001, name: "Laptop", price: 999.99, quantity: 10 },
+        1002: { id: 1002, name: "Smartphone", price: 699.99, quantity: 20 }
+    };
+
+    let currentOrder = [];
+    let selectedCustomer = null;
+
+    function populateCustomers() {
+        const select = document.getElementById('customerId');
+        for (let id in customers) {
+            const option = document.createElement('option');
+            option.value = id;
+            option.textContent = customers[id].name;
+            select.appendChild(option);
+        }
+    }
+
+    function populateItems() {
+        const select = document.getElementById('itemId');
+        for (let id in items) {
+            const option = document.createElement('option');
+            option.value = id;
+            option.textContent = items[id].name;
+            select.appendChild(option);
+        }
+    }
+
+    function updateOrderTable() {
+        const tbody = document.getElementById('orderItems');
+        tbody.innerHTML = '';
+        let total = 0;
+
+        currentOrder.forEach((orderItem, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${orderItem.name}</td>
+                <td>${orderItem.quantity}</td>
+                <td>$${orderItem.price.toFixed(2)}</td>
+                <td>$${(orderItem.price * orderItem.quantity).toFixed(2)}</td>
+                <td>
+                    <button class="btn btn-sm btn-danger" onclick="removeOrderItem(${index})">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </td>
+            `;
+            tbody.appendChild(row);
+            total += orderItem.price * orderItem.quantity;
+        });
+
+        document.getElementById('orderTotal').textContent = total.toFixed(2);
+        document.getElementById('placeOrderBtn').disabled = currentOrder.length === 0 || !selectedCustomer;
+    }
+
+    function addToOrder(itemId, quantity) {
+        const item = items[itemId];
+        const orderItem = {
+            id: item.id,
+            name: item.name,
+            price: item.price,
+            quantity: quantity
+        };
+        currentOrder.push(orderItem);
+        updateOrderTable();
+    }
+
+    function removeOrderItem(index) {
+        currentOrder.splice(index, 1);
+        updateOrderTable();
+    }
+
+    document.getElementById('customerId').addEventListener('change', function(event) {
+        const customerId = event.target.value;
+        if (customerId) {
+            selectedCustomer = customers[customerId];
+            document.getElementById('customerName').textContent = selectedCustomer.name;
+            document.getElementById('customerEmail').textContent = selectedCustomer.email;
+            document.getElementById('customerPhone').textContent = selectedCustomer.phone;
+            document.getElementById('customerDetails').style.display = 'block';
+        } else {
+            selectedCustomer = null;
+            document.getElementById('customerDetails').style.display = 'none';
+        }
+        updateOrderTable();
+    });
+
+    document.getElementById('itemId').addEventListener('change', function(event) {
+        const itemId = event.target.value;
+        if (itemId) {
+            const item = items[itemId];
+            document.getElementById('itemPrice').textContent = item.price.toFixed(2);
+            document.getElementById('itemQuantity').textContent = item.quantity;
+            document.getElementById('itemDetails').style.display = 'block';
+        } else {
+            document.getElementById('itemDetails').style.display = 'none';
+        }
+    });
+
+    document.getElementById('itemForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const itemId = document.getElementById('itemId').value;
+        const quantity = parseInt(document.getElementById('orderQuantity').value);
+        if (quantity > items[itemId].quantity) {
+            alert('Order quantity exceeds available stock!');
+            return;
+        }
+        addToOrder(itemId, quantity);
+        this.reset();
+        document.getElementById('itemDetails').style.display = 'none';
+    });
+
+    document.getElementById('placeOrderBtn').addEventListener('click', function() {
+        if (selectedCustomer && currentOrder.length > 0) {
+            const orderTotal = currentOrder.reduce((total, item) => total + item.price * item.quantity, 0);
+            const orderDetails = currentOrder.map(item => `${item.name} (${item.quantity})`).join(', ');
+            alert(`Order placed for ${selectedCustomer.name}.\nItems: ${orderDetails}\nTotal: $${orderTotal.toFixed(2)}`);
+            currentOrder = [];
+            selectedCustomer = null;
+            document.getElementById('customerId').value = '';
+            document.getElementById('customerDetails').style.display = 'none';
+            updateOrderTable();
+        } else {
+            alert('Please select a customer and add items to the order before placing it.');
+        }
+    });
+
+    // Initialize the form
+    populateCustomers();
+    populateItems();
+    updateOrderTable();
+</script>
+</body>
+</html>

@@ -83,9 +83,21 @@ const assignments = [
         description: 'Gather and curate your best work samples, projects, and achievements.\n' +
             'Design and build a website or platform to showcase your work and skills effectively.',
         image: 'Assigments/Assets/Assigment.png',
-        github: 'https://github.com/ChamathDilshanC/Chat-App-UI',
+        github: 'https://github.com/ChamathDilshanC/Portfolio_Chamath',
         cases: [
             { title: 'Case 1', description: 'Created My Own Portfolio ', path: 'index.html', image: 'Assigments/Assets/A6/Case1.png ' },
+        ]
+    },
+    {
+        id: 13,
+        type: 'assignment',
+        title: 'Assignment 07',
+        description: 'Created Single Page Pos Application. [ SPA ]\n' +
+            'Made No Refreshing Pages.',
+        image: 'Assigments/Assets/Assigment.png',
+        github: 'https://github.com/ChamathDilshanC/Pos-System/tree/spa',
+        cases: [
+            { title: 'Case 1', description: 'Made No Refreshing Pages.', path: 'Assigments/Assigment6/index.html', image: 'Assigments/Assets/A5/Case1.png ' },
         ]
     },
 ];
