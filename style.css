@@ -1673,6 +1673,21 @@ p {
     flex: 1;
 }
 
+.card-wrapper {
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.card-wrapper.show {
+    opacity: 1;
+}
+
+#cardGrid {
+    width: 100%;
+    max-width: 1200px; /* Or whatever maximum width you prefer */
+    margin: 0 auto;
+}
+
 /* Improved accessibility */
 @media (prefers-reduced-motion: reduce) {
     * {
