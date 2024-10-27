@@ -221,7 +221,24 @@ const assignments = [
                 github: 'https://github.com/ChamathDilshanC/Assignment-08/tree/main/Case2'
             }
         ]
-    }
+    },
+    {
+        id: 15,
+        type: 'assignment',
+        title: 'Assignment 09',
+        description: 'graphical view of the famous TV Series Knight Rider’s theme light system',
+        image: 'Assigments/Assets/Assigment.png',
+        github: 'https://github.com/ChamathDilshanC/Assignment-09',
+        cases: [
+            {
+                title: 'Case 1',
+                description: 'Create a graphical view of the famous TV Series Knight Rider’s theme light systemusingHTML, CSS and JS. \n',
+                path: 'Assigments/Assigment8/Assigment.html',
+                image: 'Assigments/Assets/A9/Case1.png',
+                github: 'https://github.com/ChamathDilshanC/Assignment-09/blob/main/Assigment.html'
+            }
+        ]
+    },
 ];
 
 const allItems = [...projects, ...assignments];
