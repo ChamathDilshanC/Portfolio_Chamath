@@ -1,4 +1,4 @@
-# My Creative Portfolio
+# My Portfolio
 
 Welcome to my creative portfolio! This project showcases my skills in web development, UI/UX design, and various programming technologies.
 
