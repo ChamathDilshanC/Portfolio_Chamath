@@ -209,15 +209,15 @@ const assignments = [
             {
                 title: 'Case 1',
                 description: 'Queue Process Visualization',
-                path: 'Assigments/Assigment6/index.html',
-                image: 'Assigments/Assets/A5/Case1.png',
+                path: 'Assigments/Assigment7/Case1/Case1.html',
+                image: 'Assigments/Assets/A8/Case1.png',
                 github: 'https://github.com/ChamathDilshanC/Assignment-08/tree/main/Case1'
             },
             {
                 title: 'Case 2',
                 description: 'Queue Animation Implementation',
-                path: 'Assigments/Assigment6/index.html',
-                image: 'Assigments/Assets/A5/Case1.png',
+                path: 'Assigments/Assigment7/Case1/Case2.html',
+                image: 'Assigments/Assets/A8/Case1.png',
                 github: 'https://github.com/ChamathDilshanC/Assignment-08/tree/main/Case2'
             }
         ]
