@@ -216,8 +216,8 @@ const assignments = [
             {
                 title: 'Case 2',
                 description: 'Queue Animation Implementation',
-                path: 'Assigments/Assigment7/Case1/Case2.html',
-                image: 'Assigments/Assets/A8/Case1.png',
+                path: 'Assigments/Assigment7/Case2/Case2.html',
+                image: 'Assigments/Assets/A8/Case2.png',
                 github: 'https://github.com/ChamathDilshanC/Assignment-08/tree/main/Case2'
             }
         ]
