@@ -239,6 +239,23 @@ const assignments = [
             }
         ]
     },
+    {
+        id: 16,
+        type: 'assignment',
+        title: 'Assignment 10',
+        description: 'This project includes a Calculator application built with HTML, CSS, and JavaScript. ',
+        image: 'Assigments/Assets/Assigment.png',
+        github: 'https://github.com/ChamathDilshanC/Assignment-10',
+        cases: [
+            {
+                title: 'Case 1',
+                description: 'Designed for simplicity and ease of use, this web-based calculator performs basic arithmetic operations and serves as an interactive tool for practicing frontend development skills. \n',
+                path: 'Assigments/Assigment9/Calculator.html',
+                image: 'Assigments/Assets/A10/Case1.png',
+                github: 'https://github.com/ChamathDilshanC/Assignment-10/blob/main/Calculator.html'
+            }
+        ]
+    },
 ];
 
 const allItems = [...projects, ...assignments];
