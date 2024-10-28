@@ -1673,7 +1673,11 @@ p {
     flex: 1;
 }
 
-
+.popup-card-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--primary-color);
+}
 
 /* Improved accessibility */
 @media (prefers-reduced-motion: reduce) {
