@@ -275,6 +275,7 @@ p {
     justify-content: center;
 }
 
+
 .cta-button.primary {
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     color: #ffffff;
