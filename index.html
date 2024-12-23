@@ -1,148 +1,176 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Portfolio</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
-            -webkit-font-smoothing: antialiased;
-            text-rendering: optimizeLegibility;
-            scroll-behavior: smooth;
         }
 
-        html, body {
-            height: 100%;
-            overflow: hidden;
+        :root {
+            --primary: rgb(99, 102, 241);
+            --secondary: rgb(168, 85, 247);
+            --accent: rgb(244, 114, 182);
         }
 
         body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: #000;
-            color: #c8c2bd;
-            font-size: calc(var(--_size) * 0.022);
-            --_factor: min(1000px, 100vh);
-            --_size: min(var(--_factor), 100vw);
+            background: #030712;
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            perspective: 1000px;
         }
 
-        .bg {
-            width: 100%;
-            height: 100%;
-            max-width: 44em;
-            position: absolute;
-            z-index: -1;
-        }
-
-        .bg > div {
-            position: absolute;
-            scale: 1.2;
-            opacity: 0.6;
-            width: 100%;
-            height: 100%;
-            border-radius: 100em;
-            box-shadow:
-                    inset 0 0 4em 3em rgba(238, 200, 175, 0.2),
-                    inset 0 0 2em 0.4em rgba(238, 200, 175, 0.2),
-                    0 0 0.1em 0.1em rgba(238, 200, 175, 0.2),
-                    0 0 1em 0.4em rgba(238, 200, 175, 0.3);
-        }
-
-        .bg > div:nth-child(1) {
-            transform: translateY(-64%);
-            animation: onloadbgt 1s ease-in-out forwards;
-        }
-
-        .bg > div:nth-child(2) {
-            transform: translateY(64%);
-            animation: onloadbgb 1s ease-in-out forwards;
-        }
-
-        @keyframes onloadbgt {
-            0% { transform: translateY(-70%); opacity: 0.3; }
-            100% { transform: translateY(-64%); opacity: 0.8; }
-        }
-
-        @keyframes onloadbgb {
-            0% { transform: translateY(70%); opacity: 0.3; }
-            100% { transform: translateY(64%); opacity: 0.8; }
-        }
-
-        .header-text {
-            font-size: 3em;
-            text-align: center;
-            line-height: 1.2;
-            font-weight: 700;
-            letter-spacing: -0.009em;
-            margin-bottom: 0.5em;
-        }
-
-        .glow-filter {
+        .loader-container {
             position: relative;
-            display: inline-block;
-            animation: onloadscale 1s ease-out forwards;
+            width: 300px;
+            height: 300px;
+            display: grid;
+            place-items: center;
+            transform-style: preserve-3d;
+            animation: container-float 8s ease-in-out infinite;
         }
 
-        .glow-filter::before {
-            content: attr(data-text);
+        .loader {
+            position: relative;
+            width: 240px;
+            height: 240px;
+            transform-style: preserve-3d;
+            animation: loader-rotate 20s linear infinite;
+        }
+
+        .ring {
             position: absolute;
-            left: 0;
-            top: 0;
-            pointer-events: none;
-            color: #fffaf6;
-            background: linear-gradient(0deg, #dfe5ee 0%, #fffaf6 50%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: url(#glow-4);
-            opacity: 0;
-            animation: onloadopacity 1s ease-out forwards;
+            inset: 0;
+            margin: auto;
+            border-radius: 50%;
+            background: conic-gradient(
+                    from var(--rotation, 0deg),
+                    transparent,
+                    var(--primary) 120deg,
+                    var(--secondary) 240deg,
+                    transparent 360deg
+            );
+            animation: spin 4s linear infinite;
+            transform-style: preserve-3d;
         }
 
-        @keyframes onloadscale {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.02); }
+        .ring::before,
+        .ring::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: inherit;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: xor;
+            -webkit-mask-composite: xor;
+            padding: 3px;
+            filter: blur(1px);
         }
 
-        @keyframes onloadopacity {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+        .ring::after {
+            transform: translateZ(-10px);
+            filter: blur(15px);
+            opacity: 0.5;
         }
 
-        p {
-            color: #86868b;
-            font-weight: 400;
-            background: linear-gradient(0deg, #86868b 0%, #bdc2c9 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            max-width: 28em;
-            text-align: center;
-            margin-top: 2em;
+        .ring-1 {
+            width: 200px;
+            height: 200px;
+            animation: spin 6s linear infinite, pulse 3s ease-in-out infinite;
+            --rotation: 0deg;
         }
 
-        .cta-button {
-            display: inline-block;
-            margin-top: 2em;
-            padding: 0.8em 1.6em;
-            background-color: #fffaf6;
-            color: #000;
-            text-decoration: none;
-            border-radius: 2em;
-            font-weight: 600;
-            transition: all 0.3s ease;
+        .ring-2 {
+            width: 160px;
+            height: 160px;
+            animation: spin 4s linear infinite reverse, pulse 2s ease-in-out infinite;
+            --rotation: 180deg;
         }
 
-        .cta-button:hover {
-            background-color: #dfe5ee;
-            transform: translateY(-2px);
+        .ring-3 {
+            width: 120px;
+            height: 120px;
+            animation: spin 3s linear infinite, pulse 4s ease-in-out infinite;
+            --rotation: 90deg;
+        }
+
+        .core {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 50%;
+            backdrop-filter: blur(8px);
+            box-shadow:
+                    0 0 30px var(--primary),
+                    inset 0 0 20px var(--secondary);
+            animation: core-pulse 3s ease-in-out infinite,
+            core-float 4s ease-in-out infinite;
+        }
+
+        .core::before {
+            content: '';
+            position: absolute;
+            inset: -10px;
+            background: conic-gradient(
+                    from 0deg,
+                    transparent,
+                    var(--accent) 120deg,
+                    transparent 240deg
+            );
+            border-radius: 50%;
+            animation: core-ring-spin 3s linear infinite;
+            opacity: 0.5;
+        }
+
+        .particles {
+            position: absolute;
+            width: 240px;
+            height: 240px;
+            animation: particles-spin 12s linear infinite;
+            transform-style: preserve-3d;
+        }
+
+        .particle {
+            position: absolute;
+            background: linear-gradient(
+                    45deg,
+                    var(--primary),
+                    var(--secondary)
+            );
+            border-radius: 50%;
+            filter: blur(1px);
+        }
+
+        .text {
+            position: absolute;
+            bottom: -40px;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            animation: text-float 2s ease-in-out infinite;
+        }
+
+        .glow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(
+                    circle at center,
+                    var(--primary) 0%,
+                    transparent 70%
+            );
+            opacity: 0.1;
+            filter: blur(30px);
+            animation: glow-pulse 4s ease-in-out infinite;
         }
 
         .fade-out {
@@ -150,79 +178,156 @@
         }
 
         @keyframes fadeOut {
-            0% { opacity: 1; }
-            100% { opacity: 0; }
+            to {
+                opacity: 0;
+                transform: scale(0.8) translateY(-50px);
+            }
+        }
+
+        @keyframes container-float {
+            0%, 100% { transform: translateY(-10px) rotateX(10deg); }
+            50% { transform: translateY(10px) rotateX(-10deg); }
+        }
+
+        @keyframes loader-rotate {
+            0% { transform: rotate3d(1, 1, 1, 0deg); }
+            100% { transform: rotate3d(1, 1, 1, 360deg); }
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(0.95) rotate(0deg); }
+            50% { transform: scale(1.05) rotate(180deg); }
+        }
+
+        @keyframes core-pulse {
+            0%, 100% {
+                transform: scale(0.8);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes core-float {
+            0%, 100% { transform: translateZ(20px); }
+            50% { transform: translateZ(-20px); }
+        }
+
+        @keyframes core-ring-spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes particles-spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes text-float {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.5; }
+            50% { transform: translateY(-10px) scale(1.1); opacity: 1; }
+        }
+
+        @keyframes glow-pulse {
+            0%, 100% { opacity: 0.1; transform: scale(1); }
+            50% { opacity: 0.2; transform: scale(1.2); }
+        }
+
+        @keyframes glass-float {
+            0%, 100% { transform: translateZ(30px); }
+            50% { transform: translateZ(-30px); }
+        }
+
+        .glass-overlay {
+            position: absolute;
+            inset: -20px;
+            border-radius: 50%;
+            background: radial-gradient(
+                    circle at center,
+                    rgba(99, 102, 241, 0.05) 0%,
+                    transparent 70%
+            );
+            backdrop-filter: blur(5px);
+            animation: glass-float 6s ease-in-out infinite;
+        }
+
+        .loader-container:hover {
+            animation-play-state: paused;
+        }
+
+        .loader-container:hover .ring {
+            animation-play-state: paused;
+        }
+
+        .loader-container:hover .core {
+            transform: scale(1.2);
+            transition: transform 0.3s ease;
         }
     </style>
 </head>
 <body>
-<div class="bg">
-    <div></div>
-    <div></div>
+<div class="loader-container">
+    <div class="glow"></div>
+    <div class="loader">
+        <div class="ring ring-1"></div>
+        <div class="ring ring-2"></div>
+        <div class="ring ring-3"></div>
+        <div class="core"></div>
+        <div class="particles"></div>
+        <div class="glass-overlay"></div>
+    </div>
+    <div class="text">Welcome</div>
 </div>
-
-<svg class="filters" width="1440px" height="300px" viewBox="0 0 1440 300" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <defs>
-        <filter id="glow-4" color-interpolation-filters="sRGB" x="-50%" y="-200%" width="200%" height="500%">
-            <fegaussianblur in="SourceGraphic" stddeviation="4" result="blur4"></fegaussianblur>
-            <fegaussianblur in="SourceGraphic" stddeviation="19" result="blur19"></fegaussianblur>
-            <fegaussianblur in="SourceGraphic" stddeviation="9" result="blur9"></fegaussianblur>
-            <fegaussianblur in="SourceGraphic" stddeviation="30" result="blur30"></fegaussianblur>
-            <fecolormatrix in="blur4" result="color-0-blur" type="matrix" values="1 0 0 0 0 0 0.980392156862745 0 0 0 0 0 0.9647058823529412 0 0 0 0 0 0.8 0"></fecolormatrix>
-            <feoffset in="color-0-blur" result="layer-0-offsetted" dx="0" dy="0"></feoffset>
-            <fecolormatrix in="blur19" result="color-1-blur" type="matrix" values="0.8156862745098039 0 0 0 0 0 0.49411764705882355 0 0 0 0 0 0.26274509803921575 0 0 0 0 0 1 0"></fecolormatrix>
-            <feoffset in="color-1-blur" result="layer-1-offsetted" dx="0" dy="2"></feoffset>
-            <fecolormatrix in="blur9" result="color-2-blur" type="matrix" values="1 0 0 0 0 0 0.6666666666666666 0 0 0 0 0 0.36470588235294116 0 0 0 0 0 0.65 0"></fecolormatrix>
-            <feoffset in="color-2-blur" result="layer-2-offsetted" dx="0" dy="2"></feoffset>
-            <fecolormatrix in="blur30" result="color-3-blur" type="matrix" values="1 0 0 0 0 0 0.611764705882353 0 0 0 0 0 0.39215686274509803 0 0 0 0 0 1 0"></fecolormatrix>
-            <feoffset in="color-3-blur" result="layer-3-offsetted" dx="0" dy="2"></feoffset>
-            <fecolormatrix in="blur30" result="color-4-blur" type="matrix" values="0.4549019607843137 0 0 0 0 0 0.16470588235294117 0 0 0 0 0 0 0 0 0 0 0 1 0"></fecolormatrix>
-            <feoffset in="color-4-blur" result="layer-4-offsetted" dx="0" dy="16"></feoffset>
-            <fecolormatrix in="blur30" result="color-5-blur" type="matrix" values="0.4235294117647059 0 0 0 0 0 0.19607843137254902 0 0 0 0 0 0.11372549019607843 0 0 0 0 0 1 0"></fecolormatrix>
-            <feoffset in="color-5-blur" result="layer-5-offsetted" dx="0" dy="64"></feoffset>
-            <fecolormatrix in="blur30" result="color-6-blur" type="matrix" values="0.21176470588235294 0 0 0 0 0 0.10980392156862745 0 0 0 0 0 0.07450980392156863 0 0 0 0 0 1 0"></fecolormatrix>
-            <feoffset in="color-6-blur" result="layer-6-offsetted" dx="0" dy="64"></feoffset>
-            <fecolormatrix in="blur30" result="color-7-blur" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.68 0"></fecolormatrix>
-            <feoffset in="color-7-blur" result="layer-7-offsetted" dx="0" dy="64"></feoffset>
-            <femerge>
-                <femergenode in="layer-0-offsetted"></femergenode>
-                <femergenode in="layer-1-offsetted"></femergenode>
-                <femergenode in="layer-2-offsetted"></femergenode>
-                <femergenode in="layer-3-offsetted"></femergenode>
-                <femergenode in="layer-4-offsetted"></femergenode>
-                <femergenode in="layer-5-offsetted"></femergenode>
-                <femergenode in="layer-6-offsetted"></femergenode>
-                <femergenode in="layer-7-offsetted"></femergenode>
-                <femergenode in="layer-0-offsetted"></femergenode>
-                <femergenode in="SourceGraphic"></femergenode>
-            </femerge>
-        </filter>
-    </defs>
-</svg>
-
-<div class="header-text" aria-hidden="true">
-    Welcome to<br>
-    <span class="glow-filter" data-text="My Creative Portfolio">My Creative Portfolio</span>
-</div>
-
-<p>Explore a showcase of innovative projects and designs that push the boundaries of creativity and technology.</p>
-
-<a href="#" class="cta-button" id="viewWorkBtn">View My Work</a>
-
 <script>
-    function navigateToPortfolio() {
-        document.body.classList.add('fade-out');
-        setTimeout(() => {
-            window.location.href = 'portfolio.html';
-        }, 1000);
+    const particles = document.querySelector('.particles');
+    const particleCount = 32;
+
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+
+        const angle = (i / particleCount) * Math.PI * 2;
+        const radius = 110 + Math.random() * 20;
+        const size = 2 + Math.random() * 3;
+        const depth = Math.random() * 50 - 25;
+
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        particle.style.left = `${Math.cos(angle) * radius + 118}px`;
+        particle.style.top = `${Math.sin(angle) * radius + 118}px`;
+        particle.style.transform = `translateZ(${depth}px)`;
+        particle.style.animationDelay = `${(i / particleCount) * 3}s`;
+        particle.style.animation = `
+            particle-pulse ${3 + Math.random() * 2}s ease-in-out infinite,
+            particles-spin ${12 + Math.random() * 8}s linear infinite
+        `;
+
+        particles.appendChild(particle);
     }
 
-    document.getElementById('viewWorkBtn').addEventListener('click', function(e) {
-        e.preventDefault();
-        navigateToPortfolio();
+    const container = document.querySelector('.loader-container');
+    container.addEventListener('mousemove', (e) => {
+        const rect = container.getBoundingClientRect();
+        const x = (e.clientX - rect.left - rect.width / 2) / 10;
+        const y = (e.clientY - rect.top - rect.height / 2) / 10;
+        container.style.transform = `rotateX(${-y}deg) rotateY(${x}deg)`;
     });
 
-    setTimeout(navigateToPortfolio, 3000);
+    container.addEventListener('mouseleave', () => {
+        container.style.transform = '';
+    });
+
+    // Navigation timeout
+    setTimeout(() => {
+        document.querySelector('.loader-container').classList.add('fade-out');
+        setTimeout(() => {
+            window.location.href = 'portfolio.html';
+        }, 900);
+    }, 3000);
 </script>
 </body>
 </html>
