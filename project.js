@@ -15,7 +15,7 @@ const assignments = [
         title: 'Assignment 01',
         description: 'Html and CSS assignment',
         image: 'Assigments/Assets/Assigment.png',
-        github: 'https://github.com/ChamathDilshanC/Portfolio_Chamath',
+        github: 'https://github.com/ChamathDilshanC/Portfolio_Chamath/tree/main/Assigments/Assigment1',
         cases: [
             {
                 title: 'Case 1',
@@ -32,49 +32,49 @@ const assignments = [
         title: 'Assignment 02',
         description: 'Implemented various data structures like linked lists, trees, and graphs in C++. Includes comprehensive unit tests.',
         image: 'Assigments/Assets/Assigment.png',
-        github: 'https://github.com/ChamathDilshanC/Chat-App-UI',
+        github: 'https://github.com/ChamathDilshanC/Portfolio_Chamath/tree/main/Assigments/Assigment2',
         cases: [
             {
                 title: 'Case 1',
                 description: 'A colorful grid layout with four quadrants in red, green, yellow, and pink.',
                 path: 'Assigments/Assigment2/Case1/case1.html',
                 image: 'Assigments/Assets/A2/Case1.png',
-                github: 'https://github.com/ChamathDilshanC/Chat-App-UI/tree/main/Assigments/Assigment2/Case1'
+                github: 'https://github.com/ChamathDilshanC/Portfolio_Chamath/blob/main/Assigments/Assigment2/Case1'
             },
             {
                 title: 'Case 2',
                 description: 'A dark blue rectangular layout with three repeated orange "f" logos.',
                 path: 'Assigments/Assigment2/Case2/case2.html',
                 image: 'Assigments/Assets/A2/Case2.png',
-                github: 'https://github.com/ChamathDilshanC/Chat-App-UI/tree/main/Assigments/Assigment2/Case2'
+                github: 'https://github.com/ChamathDilshanC/Portfolio_Chamath/blob/main/Assigments/Assigment2/Case2'
             },
             {
                 title: 'Case 3',
                 description: 'A simple circular design with concentric circles in different colors.',
                 path: 'Assigments/Assigment2/Case3/case3.html',
                 image: 'Assigments/Assets/A2/Case3.png',
-                github: 'https://github.com/ChamathDilshanC/Chat-App-UI/tree/main/Assigments/Assigment2/Case3'
+                github: 'https://github.com/ChamathDilshanC/Portfolio_Chamath/blob/main/Assigments/Assigment2/Case3'
             },
             {
                 title: 'Case 4',
                 description: 'A card-like layout with a blue background and the word "How".',
                 path: 'Assigments/Assigment2/Case4/case4.html',
                 image: 'Assigments/Assets/A2/Case4.png',
-                github: 'https://github.com/ChamathDilshanC/Chat-App-UI/tree/main/Assigments/Assigment2/Case4'
+                github: 'https://github.com/ChamathDilshanC/Portfolio_Chamath/blob/main/Assigments/Assigment2/Case4'
             },
             {
                 title: 'Case 5',
                 description: 'A colorful grid layout made up of 12 rectangles.',
                 path: 'Assigments/Assigment2/Case5/case5.html',
                 image: 'Assigments/Assets/A2/Case5.png',
-                github: 'https://github.com/ChamathDilshanC/Chat-App-UI/tree/main/Assigments/Assigment2/Case5'
+                github: 'https://github.com/ChamathDilshanC/Portfolio_Chamath/blob/main/Assigments/Assigment2/Case5'
             },
             {
                 title: 'Case 6',
                 description: 'Another colorful grid layout with asymmetrical arrangement.',
                 path: 'Assigments/Assigment2/Case6/case6.html',
                 image: 'Assigments/Assets/A2/Case6.png',
-                github: 'https://github.com/ChamathDilshanC/Chat-App-UI/tree/main/Assigments/Assigment2/Case6'
+                github: 'https://github.com/ChamathDilshanC/Portfolio_Chamath/blob/main/Assigments/Assigment2/Case6'
             }
         ]
     },
@@ -84,49 +84,49 @@ const assignments = [
         title: 'Assignment 03',
         description: 'CSS Animations and Transitions',
         image: 'Assigments/Assets/Assigment.png',
-        github: 'https://github.com/ChamathDilshanC/Assignment-03',
+        github: 'https://github.com/ChamathDilshanC/Portfolio_Chamath/tree/main/Assigments/Assigment3',
         cases: [
             {
                 title: 'Case 1',
                 description: 'Simple Menu Bar',
                 path: 'Assigments/Assigment3/Case1/case1.html',
                 image: 'Assigments/Assets/A3/Case1.png',
-                github: 'https://github.com/ChamathDilshanC/Assignment-03/tree/main/Case1'
+                github: 'https://github.com/ChamathDilshanC/Portfolio_Chamath/tree/main/Assigments/Assigment3/Case1'
             },
             {
                 title: 'Case 2',
                 description: 'Hover Effect Animation',
                 path: 'Assigments/Assigment3/Case2/case2.html',
                 image: 'Assigments/Assets/A3/Case2.png',
-                github: 'https://github.com/ChamathDilshanC/Assignment-03/tree/main/Case2'
+                github: 'https://github.com/ChamathDilshanC/Portfolio_Chamath/tree/main/Assigments/Assigment3/Case2'
             },
             {
                 title: 'Case 3',
                 description: 'Floating Box Animation',
                 path: 'Assigments/Assigment3/Case3/case3.html',
                 image: 'Assigments/Assets/A3/Case3.png',
-                github: 'https://github.com/ChamathDilshanC/Assignment-03/tree/main/Case3'
+                github: 'https://github.com/ChamathDilshanC/Portfolio_Chamath/tree/main/Assigments/Assigment3/Case3'
             },
             {
                 title: 'Case 4',
                 description: 'Warterdrop Animation',
                 path: 'Assigments/Assigment3/Case4/case4.html',
                 image: 'Assigments/Assets/A3/Case4.png',
-                github: 'https://github.com/ChamathDilshanC/Assignment-03/tree/main/Case4'
+                github: 'https://github.com/ChamathDilshanC/Portfolio_Chamath/tree/main/Assigments/Assigment3/Case4'
             },
             {
                 title: 'Case 5',
                 description: 'Image Slider',
                 path: 'Assigments/Assigment3/Case5/case5.html',
                 image: 'Assigments/Assets/A3/Case5.png',
-                github: 'https://github.com/ChamathDilshanC/Assignment-03/tree/main/Case5'
+                github: 'https://github.com/ChamathDilshanC/Portfolio_Chamath/tree/main/Assigments/Assigment3/Case5'
             },
             {
                 title: 'Case 6',
                 description: 'Car Animation',
                 path: 'Assigments/Assigment3/Case6/CarAnimation.html',
                 image: 'Assigments/Assets/A3/Case6.png',
-                github: 'https://github.com/ChamathDilshanC/Assignment-03/tree/main/Case6'
+                github: 'https://github.com/ChamathDilshanC/Portfolio_Chamath/tree/main/Assigments/Assigment3/Case6'
             }
         ]
     },
@@ -136,14 +136,14 @@ const assignments = [
         title: 'Assignment 04',
         description: 'Design layout using flexible grids, images, and CSS media queries.',
         image: 'Assigments/Assets/Assigment.png',
-        github: 'https://github.com/ChamathDilshanC/Assignment-04',
+        github: 'https://github.com/ChamathDilshanC/Portfolio_Chamath/tree/main/Assigments/Assigment1',
         cases: [
             {
                 title: 'Case 1',
                 description: 'Design layout using flexible grids, images, and CSS media queries.',
                 path: 'Assigments/Assigment4/Assigment-4.html',
                 image: 'Assigments/Assets/A4/Case1.png',
-                github: 'https://github.com/ChamathDilshanC/Assignment-04/tree/main/Case1'
+                github: 'https://github.com/ChamathDilshanC/Portfolio_Chamath/tree/main/Assigments/Assigment4'
             }
         ]
     },
@@ -153,7 +153,7 @@ const assignments = [
         title: 'Assignment 05',
         description: 'Design user interface for inventory management, sales processing, and reporting.',
         image: 'Assigments/Assets/Assigment.png',
-        github: 'https://github.com/ChamathDilshanC/Assignment-05',
+        github: 'https://github.com/ChamathDilshanC/Portfolio_Chamath/tree/main/Assigments/Assigment5',
         cases: [
             {
                 title: 'Case 1',
@@ -170,7 +170,7 @@ const assignments = [
         title: 'Assignment 06',
         description: 'Design and build a website or platform to showcase your work and skills effectively.',
         image: 'Assigments/Assets/Assigment.png',
-        github: 'https://github.com/ChamathDilshanC/Portfolio_Chamath',
+        github: 'https://github.com/ChamathDilshanC/Portfolio_Chamath/tree/main/Assigments/Assigment6',
         cases: [
             {
                 title: 'Case 1',
