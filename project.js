@@ -1,3 +1,6 @@
+/*Authored by: @ChamathDilshan
+Description: Copyright 2021 Chamath Dilshan */
+
 // Project and assignment data
 const projects = [
     { id: 1, type: 'project', title: 'E-commerce Platform Web', description: 'Developed a full-stack online store with user authentication, product catalog, and payment integration using React, Node.js, and MongoDB.', image: 'Projects/Assets/Pos.png', github: 'https://github.com/ChamathDilshanC/Pos-System' },

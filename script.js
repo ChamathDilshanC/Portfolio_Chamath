@@ -1,3 +1,6 @@
+/*Authored by: @ChamathDilshan
+Description: Copyright 2021 Chamath Dilshan */
+
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
