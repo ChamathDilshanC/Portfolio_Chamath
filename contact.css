@@ -209,72 +209,6 @@
     }
 }
 
-/* Toast notification enhancements */
-.toastify {
-    font-family: 'Inter', sans-serif;
-    padding: 16px 24px;
-    border-radius: 16px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    font-weight: 500;
-}
-
-.toastify.success {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-}
-
-.toastify.error {
-    background: linear-gradient(135deg, #f44336, #ff9800);
-}
-
-.toastify.info {
-    background: linear-gradient(135deg, #2196f3, #03a9f4);
-}
-
-/* Thank you message animation */
-.thank-you-message {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--card-bg-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 16px;
-    animation: fadeIn 0.5s ease-out;
-    z-index: 10;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(var(--primary-color-rgb, 142, 45, 226), 0.1);
-}
-
-.thank-you-message svg {
-    color: var(--primary-color);
-    margin-bottom: 24px;
-    animation: scaleUp 0.5s ease-out;
-    width: 64px;
-    height: 64px;
-}
-
-.thank-you-message p {
-    font-size: 1.4rem;
-    color: var(--text-color);
-    font-weight: 600;
-    margin-top: 0;
-    text-align: center;
-}
-
-.thank-you-message span {
-    font-size: 1rem;
-    color: var(--text-color);
-    opacity: 0.8;
-    margin-top: 8px;
-    text-align: center;
-}
-
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -342,4 +276,137 @@
 .dark-mode .form-group input:focus,
 .dark-mode .form-group textarea:focus {
     background-color: rgba(0, 0, 0, 0.2);
+}
+
+/**
+ * Ultra Modern Toast Notifications
+ * Add this to your contact.css file
+ */
+
+/* Base toast styling */
+.toastify {
+    font-family: 'Inter', sans-serif;
+    padding: 16px 24px;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 500;
+    font-size: 0.95rem;
+    max-width: 360px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transform: translateY(0);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.toastify:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 25px 65px rgba(0, 0, 0, 0.2);
+}
+
+/* Success toast */
+.toastify.toast-success {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.toastify.toast-success::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 11.08V12a10 10 0 1 1-5.93-9.14'%3E%3C/path%3E%3Cpolyline points='22 4 12 14.01 9 11.01'%3E%3C/polyline%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Error toast */
+.toastify.toast-error {
+    background: linear-gradient(135deg, #f44336, #ff9800);
+    color: white;
+}
+
+.toastify.toast-error::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Info toast */
+.toastify.toast-info {
+    background: linear-gradient(135deg, #2196f3, #03a9f4);
+    color: white;
+}
+
+.toastify.toast-info::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='16' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='8' x2='12.01' y2='8'%3E%3C/line%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Toast close button */
+.toast-close {
+    opacity: 0.7;
+    font-size: 20px;
+    font-weight: 300;
+    color: white;
+    background: transparent;
+    border: none;
+    margin-left: auto;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toast-close:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+/* Dark mode adjustments */
+.dark-mode .toastify {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Toast animations */
+@keyframes toastFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes toastFadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.toastify.toast-entering {
+    animation: toastFadeIn 0.3s cubic-bezier(0.21, 1.02, 0.73, 1) forwards;
+}
+
+.toastify.toast-exiting {
+    animation: toastFadeOut 0.3s forwards;
 }
